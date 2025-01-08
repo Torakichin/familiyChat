@@ -1,7 +1,6 @@
 streamlit
 pandas
 requests
-bs4
-plotly.graph_objects
+beautifulsoup4
+plotly
 prophet
-prophet.plot
