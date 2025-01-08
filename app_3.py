@@ -9,12 +9,6 @@ import re
 
 st.title("鋼材価格予測アプリ")
 
-# プロキシサーバの設定（必要に応じて）
-proxies = {
-    'http': 'http://172.16.200.23:8080',
-    'https': 'http://172.16.200.23:8080',
-}
-
 # 鋼材の種類と対応するURL、テーブルクラスの辞書
 steel_types = {
     "厚板　【19×5×10】": "https://www.japanmetal.com/memberwel/marketprice/soba_atsuita",
@@ -26,7 +20,7 @@ steel_types = {
 # データ取得関数
 def scrape_data(url):
     try:
-        response = requests.get(url, proxies=proxies)
+        response = requests.get(url)
         response.raise_for_status()
         soup = BeautifulSoup(response.content, "html.parser")
 
