@@ -8,7 +8,7 @@ DB_FILE = "chat_history.db"
 PASSWORD = "198311"  # 平文パスワード
 
 # ページ設定
-st.set_page_config(page_title="家族チャット", layout="centered", page_icon="smile_cat")
+st.set_page_config(page_title="家族チャット", layout="centered", page_icon="")
 st.write(
     """<style>
     #MainMenu {visibility: hidden;}
