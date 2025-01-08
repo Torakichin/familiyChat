@@ -5,10 +5,10 @@ import time
 
 # データベースファイルのパス
 DB_FILE = "chat_history.db"
-PASSWORD = "password"  # 平文パスワード
+PASSWORD = "198311"  # 平文パスワード
 
 # ページ設定
-st.set_page_config(page_title="チャット", layout="centered", page_icon="")
+st.set_page_config(page_title="家族チャット", layout="centered", page_icon="smile_cat")
 st.write(
     """<style>
     #MainMenu {visibility: hidden;}
@@ -87,7 +87,7 @@ if st.session_state.password_correct:
     with st.container():
         col1, col2 = st.columns([1, 3])
         with col1:
-            user = st.selectbox("名前を選択", ["AA", "BB", "CC", "DD"])
+            user = st.selectbox("名前を選択", ["父", "母", "ののか", "まさむね"])
         with col2:
             prompt = st.chat_input("メッセージを入力してください")
 
@@ -107,7 +107,7 @@ if st.session_state.password_correct:
 
     # メッセージ履歴を表示（最新のメッセージが上に表示されるように変更）
     with message_area:
-        messages_to_show = get_messages() if st.session_state.show_all_messages else get_messages(10)
+        messages_to_show = get_messages() if st.session_state.show_all_messages else get_messages(5)
 
         for message in messages_to_show[::-1]:
             with st.chat_message(message[0]):
